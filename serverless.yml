@@ -1,21 +1,18 @@
-service: af-frontend
-
-frameworkVersion: ">=1.2.0 <2.0.0"
-
+service: com-appit-tech-web
 plugins:
   - serverless-single-page-app-plugin
   - serverless-dotenv-plugin
 
 custom:
-  s3Bucket: angular-serverless-starter-${env:STAGE}
-  distFolder: dist/angular-serverless-starter
+  s3Bucket: com-appit-tech-web-${env:STAGE}
+  distFolder: dist/angular-serverless-starter/browser
   dotenv:
-    basePath: src/environments/
+    # basePath: ../
 
 provider:
   name: aws
   runtime: nodejs10.x
-  region: ${env:REGION}
+  region: ${env:AWS_REGION, 'ap-south-1'}
   stage: ${env:STAGE}
 
 resources:

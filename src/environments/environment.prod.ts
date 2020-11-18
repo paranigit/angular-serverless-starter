@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  REGION:'ap-south-1',
+  STAGE:'prod'
 };
